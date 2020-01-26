@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Dikshit's Chat App
+        </title>
+        <link rel="stylesheet" href="css/style.css"> 
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="header"></div>
+            <div class="side-bar"></div>
+            <div class="message-display"></div>
+            <div class="message-entry">
+                <form id="messageForm">
+                    <input placeholder="Enter your message here" name="messageField" id="messageField" class="message-field">
+            </div>
+            <div class="message-button">
+                <input type="submit" value="send" name="messageButton" id="messageButton" class="message-button-inside">
+            </form>
+            </div>
+            <div class="location-button">
+                <form id="locationButtonForm">
+                    <input type="submit" value="Send Location" name="locationButton" id="locationButton" class="location-button-inside">
+                </form>
+            </div>
+        </div>
+      
+        
+        <!-- @@@@@@@@@@ message layout @@@@@@@@@@ -->
+
+        <script type="text/html" class="message-format">
+            <div class="message-format-inside">
+                <div class="message">{{message}}</div>
+                <div class="sender-and-timestamp">{{username}} - {{createdAt}}</div>
+            </div>
+        </script>
+        
+        <!-- @@@@@@@@@@ location message layout @@@@@@@@ -->
+        
+        <script type="text/html" class="location-message-format">
+            <div class="message-format-inside">
+                <div class="message"><a href="{{url}}">My Location</a></div>
+                <div class="sender-and-timestamp">{{username}} - {{createdAt}}</div>
+            </div>
+        </script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.1.0/mustache.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.1/qs.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/chat.js"></script>
+    </body>
+</html>

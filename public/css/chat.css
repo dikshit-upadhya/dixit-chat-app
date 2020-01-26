@@ -1,0 +1,72 @@
+body{
+    margin:0;
+    padding:0;
+    background-image: linear-gradient(rgba(21, 219, 209, 0.986), rgba(26, 136, 163, 1));
+}
+.container{
+    position:absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    height: 50vh;
+    width: 25vw;
+    min-width:250px;
+    /* border: 1px solid blue; */
+    box-shadow: 0 0 5px 5px rgba(0,0,0,0.4);
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(4, 1fr);
+    background-image: linear-gradient(rgba(21, 219, 209, 0.986), rgba(26, 136, 163, 1));
+}
+.join-in-heading {
+    grid-row:1/2;
+}
+.join-in-username {
+    grid-row:2/3;
+}
+.join-in-password {
+    grid-row:3/4;
+}
+.join-in-button {
+    grid-row:4/5;
+}
+
+.join-in-username input,
+.join-in-password input,
+.join-in-button input {
+    max-width: 80%;
+    outline: none;
+    border: 0;
+    padding: 3px 10px;
+    box-shadow: 0 0 5px 4px rgba(0,0,0,0.3);
+    font-size:20px;
+    font-weight: bolder;
+    height: 30px;
+    border-radius: 5px;    
+}
+.join-in-heading h1{
+    color: white;
+    text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+        1px 1px 0 #000;
+    font-size: 50px;
+}
+.join-in-button input{
+    background-color: rgba(50, 89, 199, 0.842);
+    color: #fff;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+.join-in-button input:hover{
+    background-color:rgba(48, 103, 255, 0.842);
+}
+div[class*="join-in"]{
+    text-align: center;
+    padding: 10px 10px 0 20px;
+    
+}
