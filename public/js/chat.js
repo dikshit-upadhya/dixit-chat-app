@@ -7,6 +7,7 @@ const locationButtonForm = document.querySelector('#locationButtonForm')
 const locationButton = document.querySelector('#locationButton')
 
 const messageArea = document.querySelector('.message-display')
+const sideBar = document.querySelector('.side-bar')
 
 const {username, password:roomId} = Qs.parse(location.search, { ignoreQueryPrefix: true})
 
@@ -62,6 +63,15 @@ locationButtonForm.addEventListener('submit', e => {
             locationButton.removeAttribute('disabled')
         })
     })
+})
+
+socket.on('sidebar-content', ({roomId, userList}) => {
+    const html = document.querySelector('.sidebar-content-format').innerHTML
+    const sidebarTemplate = Mustache.render(html, {
+        roomId,
+        userList
+    })
+    sideBar.innerHTML=sidebarTemplate
 })
 
 socket.emit('join', {

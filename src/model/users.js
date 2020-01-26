@@ -39,7 +39,7 @@ const getUser = (id) => {
 }
 
 const getUserList = (roomId) => {
-    const userList = user.filter( ele => ele.roomId ===roomId)
+    const userList = users.filter( ele => ele.roomId ===roomId)
     return userList
 }
 

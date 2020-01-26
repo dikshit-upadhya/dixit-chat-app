@@ -24,6 +24,10 @@ io.on('connection', (socket) => {
         socket.join(user.roomId)
         socket.emit('message', generateMessage('Admin', 'Welcome! Enjoy your chat over here!'))
         socket.broadcast.to(user.roomId).emit('message', generateMessage('Admin', `${user.username} has joined!`))
+        io.to(user.roomId).emit('sidebar-content', {
+            roomId: user.roomId,
+            userList: getUserList(user.roomId)
+        })
         callback()
     })
     
@@ -51,6 +55,10 @@ io.on('connection', (socket) => {
             return console.log(error)
         }
         io.to(removedUser.roomId).emit('message', generateMessage('Admin', `${removedUser.username} just disconnected!`))
+        io.to(removedUser.roomId).emit('sidebar-content', {
+            roomId: removedUser.roomId,
+            userList: getUserList(removedUser.roomId)
+        })
     })
     
 })

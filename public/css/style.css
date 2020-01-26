@@ -46,6 +46,22 @@ body {
     padding: 3px 3px 3px 0;
 }
 
+/* ############ side bar contents ########## */
+
+.side-bar-content h1{
+    margin:0;
+    padding: 22px;
+    display:block;
+    width: 100%;
+    background: rgb(8, 29, 68);
+    color: white;
+    text-align:center;
+}
+.side-bar-content h3{
+    color: white;
+    text-align: center;
+}
+
 /* ######## message display contents ########## */
 
 .message-format-inside {

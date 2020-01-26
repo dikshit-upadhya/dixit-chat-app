@@ -45,6 +45,17 @@
                 <div class="sender-and-timestamp">{{username}} - {{createdAt}}</div>
             </div>
         </script>
+
+        <!-- @@@@@@@@@@@@@ side bar content layout @@@@@@@@@ -->
+        
+        <script type="text/html" class="sidebar-content-format">
+            <div class="side-bar-content">
+                <h1>roomId</h1>
+                {{#userList}}
+                <h3>{{username}}</h3>
+                {{/userList}}
+            </div>
+        </script>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.1.0/mustache.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
