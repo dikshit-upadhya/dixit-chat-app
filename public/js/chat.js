@@ -20,6 +20,7 @@ socket.on('message', message => {
         createdAt: moment(message.createdAt).format('hh:mm a')
     })
     messageArea.insertAdjacentHTML('beforeend', html)
+
 })
 
 socket.on('locationMessage', message => { 
