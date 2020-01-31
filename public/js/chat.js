@@ -5,6 +5,7 @@ const messageButton = document.querySelector('#messageButton')
 const messageForm = document.querySelector('#messageForm')
 const locationButtonForm = document.querySelector('#locationButtonForm')
 const locationButton = document.querySelector('#locationButton')
+const logOutButton = document.querySelector('#logoutButton')
 
 const messageArea = document.querySelector('.message-display')
 const sideBar = document.querySelector('.side-bar')
@@ -65,6 +66,12 @@ locationButtonForm.addEventListener('submit', e => {
     })
 })
 
+logOutButton.addEventListener('click', e => {
+    e.preventDefault()
+    socket.disconnect()
+    location.href = '/..'
+})
+
 socket.on('sidebar-content', ({roomId, userList}) => {
     const html = document.querySelector('.sidebar-content-format').innerHTML
     const sidebarTemplate = Mustache.render(html, {
@@ -73,6 +80,8 @@ socket.on('sidebar-content', ({roomId, userList}) => {
     })
     sideBar.innerHTML=sidebarTemplate
 })
+
+
 
 socket.emit('join', {
     username, 

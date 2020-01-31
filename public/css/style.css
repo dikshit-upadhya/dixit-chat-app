@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    word-wrap: break-word;
 }
 body {
     margin: 0;
@@ -115,7 +116,7 @@ body {
     width: 90vw;
     height: 100vh;
     display:grid;
-    grid-template-columns: 250px auto;
+    grid-template-columns:repeat;
     padding-top: 50px;
 }
 .side-bar{    
@@ -127,7 +128,7 @@ body {
     grid-column: 2/3;
     display: grid;
     grid-template-columns: 100%;
-    grid-auto-rows: auto;
+    grid-auto-rows: min-content;
 }
 
 /* ############ lower sticky contents portion ######### */
@@ -164,9 +165,13 @@ body {
 /* ######## message display contents ########## */
 
 .message-format-inside {
+    max-width: 100%;
+    word-wrap: break-all;
     padding: 20px 10px 10px 30px;
 }
 .message-format-inside .message{
+    max-width: 100%;
+    /* overflow-wrap: break-word; */
     font-size: 25px;
 }
 .message-format-inside .sender-and-timestamp{
@@ -263,7 +268,7 @@ body {
 
 @media screen and (max-width: 800px) {
     .container {
-        grid-template-columns: auto;
+        grid-template-columns: 100%;
     }
     .message-display{
         grid-column: 1/2;

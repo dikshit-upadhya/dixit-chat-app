@@ -34,7 +34,7 @@ io.on('connection', (socket) => {
     socket.on('sendMessage', (message , callback) => {
         const user = getUser(socket.id)
         if(!user){
-            return callback(error)
+            return callback('this is an error')
         }
         io.to(user.roomId).emit('message', generateMessage(user.username, message))
         callback()
@@ -50,6 +50,7 @@ io.on('connection', (socket) => {
     })
 
     socket.on('disconnect', () => {
+        // console.log('either this was called of enforced!')
         const {removedUser, error} = removeUser(socket.id)
         if(error) {
             return console.log(error)

@@ -28,29 +28,17 @@
             </div>
         </div>
         <div class="logout-option">
-            <button>
+            <button id="logoutButton">
                 LOG OUT
             </button>
         </div>
         <!-- @@@@@@@@@@ message display part @@@@@@@@@@ -->
-        <div class="container">
-            <div class="side-bar">
-                <div class="side-bar-content">
-                    <h1>roomId</h1>
-                    
-                    <h3>dkshit</h3>
-                    
-                </div>
-            </div>
-            <div class="message-display">
-                <div class="message-format-inside">
-                    <div class="message">
-                        ehllool dkdkfkdf dkf dkfldfjd fdjfd fkdf kdf dkf dkf kdfjdk fdkfjdk
-                    </div>
-                    <div class="sender-and-timestamp">{{username}} - {{createdAt}}</div>
-                </div>
-            </div>
-        </div>   
+       
+            <div class="container">
+                <div class="side-bar"></div>
+                <div class="message-display"></div>
+            </div> 
+        
 
         <!-- @@@@@@@@@@@ sticky footer part @@@@@@@@@@@@@ -->
 
@@ -90,7 +78,7 @@
         
         <script type="text/html" class="location-message-format">
             <div class="message-format-inside">
-                <div class="message"><a href="{{url}}">My Location</a></div>
+                <div class="message"><a href="{{url}}" target="_blank">My Location</a></div>
                 <div class="sender-and-timestamp">{{username}} - {{createdAt}}</div>
             </div>
         </script>
@@ -99,7 +87,7 @@
         
         <script type="text/html" class="sidebar-content-format">
             <div class="side-bar-content">
-                <h1>roomId</h1>
+                <h1>{{roomId}}</h1>
                 {{#userList}}
                 <h3>{{username}}</h3>
                 {{/userList}}
