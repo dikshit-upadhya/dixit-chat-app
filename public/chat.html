@@ -1,32 +1,81 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>
-            Dikshit's Chat App
-        </title>
-        <link rel="stylesheet" href="css/style.css"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Dikshit's Chat App</title>
+        <link rel="icon" type="image/ico" href="./img/text.png">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">        
     </head>
     <body>
-
-        <div class="container">
-            <div class="header"></div>
-            <div class="side-bar"></div>
-            <div class="message-display"></div>
-            <div class="message-entry">
-                <form id="messageForm">
-                    <input placeholder="Enter your message here" name="messageField" id="messageField" class="message-field">
+        
+        <!-- @@@@@@@@@ fixed navbar @@@@@@@@@@ -->
+        <div class="navbar">
+            <div class="hamburger">
+                <button><i class="material-icons font-high" >list</i></button>
             </div>
-            <div class="message-button">
-                <input type="submit" value="send" name="messageButton" id="messageButton" class="message-button-inside">
-            </form>
+            <div class="logo">
+                <div class="logo-heading">
+                    <h1>YouChats</h1>
+                </div>
+                <div class="logo-logo">
+                    <i class="material-icons">chat</i>
+                </div>
             </div>
-            <div class="location-button">
-                <form id="locationButtonForm">
-                    <input type="submit" value="Send Location" name="locationButton" id="locationButton" class="location-button-inside">
-                </form>
+            <div class="logout">
+                <button><i class="material-icons font-high" >perm_identity</i></button>
             </div>
         </div>
-      
+        <div class="logout-option">
+            <button>
+                LOG OUT
+            </button>
+        </div>
+        <!-- @@@@@@@@@@ message display part @@@@@@@@@@ -->
+        <div class="container">
+            <div class="side-bar">
+                <div class="side-bar-content">
+                    <h1>roomId</h1>
+                    
+                    <h3>dkshit</h3>
+                    
+                </div>
+            </div>
+            <div class="message-display">
+                <div class="message-format-inside">
+                    <div class="message">
+                        ehllool dkdkfkdf dkf dkfldfjd fdjfd fkdf kdf dkf dkf kdfjdk fdkfjdk
+                    </div>
+                    <div class="sender-and-timestamp">{{username}} - {{createdAt}}</div>
+                </div>
+            </div>
+        </div>   
+
+        <!-- @@@@@@@@@@@ sticky footer part @@@@@@@@@@@@@ -->
+
+        <div class="footer">
+                
+            <div class="message-entry">
+                <form id="messageForm">
+                <input placeholder="Enter your message here" name="messageField" id="messageField" class="message-field">
+            </div>
+                
+            <div class="message-button">
+                <button id="messageButton" class="message-button-inside"><i class="material-icons font-high">send</i></button>
+                <!-- id=name="messageButton" class="message-button-inside" -->
+                </form>
+            </div>
+                
+            <div class="location-button">
+                <form id="locationButtonForm">
+                <button class="location-button-inside" id="locationButton" name="locationButton">
+                    <i class="material-icons font-high">my_location</i>
+                </button>
+                </form> 
+            </div>
+
+        </div>
         
         <!-- @@@@@@@@@@ message layout @@@@@@@@@@ -->
 
@@ -61,6 +110,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.1/qs.min.js"></script>
         <script src="/socket.io/socket.io.js"></script>
-        <script src="/js/chat.js"></script>
+        <script src="./js/uiDesign.js"></script>
+        <script src="./js/chat.js"></script>
     </body>
 </html>
